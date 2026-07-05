@@ -10,5 +10,8 @@ export type ThemeMode = "dark" | "light";
 
 export type EntityBadge = {
   label: string;
+  imageSrc?: string;
+  shape?: "square" | "wide";
+  icon?: "building";
   tone: "cyan" | "sky" | "lime" | "emerald";
 };

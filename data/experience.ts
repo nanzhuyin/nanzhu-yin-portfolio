@@ -14,7 +14,7 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     id: "kaidi-feiyan",
-    badge: { label: "KD", tone: "lime" },
+    badge: { label: "Chengdu Kaidi Feiyan Technology", icon: "building", tone: "lime" },
     company: {
       zh: "成都凯迪飞研科技有限责任公司",
       en: "Chengdu Kaidi Feiyan Technology Co., Ltd.",
@@ -88,7 +88,7 @@ export const experience: Experience[] = [
   },
   {
     id: "xiechuang-data",
-    badge: { label: "XC", tone: "emerald" },
+    badge: { label: "Xiechuang Data Technology", imageSrc: "/affiliations/sharetronic-icon.png", tone: "emerald" },
     company: {
       zh: "协创数据技术股份有限公司",
       en: "Xiechuang Data Technology Co., Ltd.",

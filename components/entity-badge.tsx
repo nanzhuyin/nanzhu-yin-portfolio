@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { EntityBadge as EntityBadgeData } from "@/data/types";
 
 const toneClassName: Record<EntityBadgeData["tone"], string> = {
@@ -8,12 +9,30 @@ const toneClassName: Record<EntityBadgeData["tone"], string> = {
 };
 
 export function EntityBadge({ badge, className = "" }: { badge: EntityBadgeData; className?: string }) {
+  const isWideLogo = badge.imageSrc && badge.shape === "wide";
+
   return (
     <span
-      className={`mono grid h-11 w-11 shrink-0 place-items-center rounded-lg border text-sm font-semibold shadow-[0_0_22px_rgb(var(--cyan)/0.08)] ${toneClassName[badge.tone]} ${className}`}
+      className={`grid shrink-0 place-items-center overflow-hidden rounded-lg border shadow-[0_0_22px_rgb(var(--cyan)/0.08)] ${
+        isWideLogo ? "h-11 w-20 p-1.5" : "h-11 w-11 p-1"
+      } ${toneClassName[badge.tone]} ${className}`}
       aria-hidden="true"
     >
-      {badge.label}
+      {badge.imageSrc ? (
+        <Image
+          src={badge.imageSrc}
+          alt=""
+          width={isWideLogo ? 76 : 34}
+          height={34}
+          className="h-full w-full object-contain"
+        />
+      ) : (
+        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 20V8.5L12 4l8 4.5V20" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M8 20v-6h8v6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M8 10h.01M12 10h.01M16 10h.01" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
+        </svg>
+      )}
     </span>
   );
 }
