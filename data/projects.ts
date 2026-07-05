@@ -1,5 +1,10 @@
 import type { LocalizedList, LocalizedText, ProjectCategory } from "./types";
 
+export type ProjectMetric = {
+  value: string;
+  label: LocalizedText;
+};
+
 export type Project = {
   id: string;
   category: ProjectCategory;
@@ -9,6 +14,7 @@ export type Project = {
   link?: string;
   stack: string[];
   summary: LocalizedText;
+  metrics?: ProjectMetric[];
   highlights: LocalizedList;
 };
 
@@ -94,6 +100,16 @@ export const projects: Project[] = [
       en: "A Multi-Agent Repair-as-a-Service framework for Solidity contracts that integrates detection, tool fusion, deduplication, false-positive filtering, second-pass validation, repair suggestions, and report generation.",
       zhHant: "面向 Solidity 智慧合約的 Multi-Agent Repair-as-a-Service 框架，將檢測、工具融合、去重、誤報過濾、二次驗證、修復建議與報告生成整合為端到端流程。"
     },
+    metrics: [
+      {
+        value: "33",
+        label: { zh: "Web3Bugs 样本", en: "Web3Bugs samples", zhHant: "Web3Bugs 樣本" }
+      },
+      {
+        value: "22.49%",
+        label: { zh: "平均 findings 减少率", en: "average finding reduction", zhHant: "平均 findings 減少率" }
+      }
+    ],
     highlights: {
       zh: [
         "参与设计面向 Solidity 智能合约的 Multi-Agent Repair-as-a-Service 框架，将漏洞检测、工具融合、结果去重、误报过滤、二次验证、修复建议与报告生成整合为端到端流程。",
@@ -132,6 +148,16 @@ export const projects: Project[] = [
       en: "Transforms one-shot LLM Q&A into an inspectable and reproducible multi-stage Solidity audit workflow, validated through project-level experiments on Web3Bugs.",
       zhHant: "將一次性 LLM 問答改造為可檢查、可復現的多階段 Solidity 審計工作流，並基於 Web3Bugs 完成專案級實驗。"
     },
+    metrics: [
+      {
+        value: "96",
+        label: { zh: "有效 JSON 审计报告", en: "valid JSON audit reports", zhHant: "有效 JSON 審計報告" }
+      },
+      {
+        value: "245",
+        label: { zh: "最终 findings", en: "final findings", zhHant: "最終 findings" }
+      }
+    ],
     highlights: {
       zh: [
         "参与设计基于 OpenClaw 的项目级 Solidity 审计报告生成流程，将一次性 LLM 问答改造为可检查、可复现的多阶段审计工作流。",
@@ -205,6 +231,16 @@ export const projects: Project[] = [
       en: "An inspectable multi-stage e-commerce review intelligence framework integrating sentiment classification, topic discovery, evidence extraction, and business insight generation.",
       zhHant: "將情感分類、主題發現、證據抽取與業務洞察生成整合為可檢查的多階段電商評論知識發現框架。"
     },
+    metrics: [
+      {
+        value: "30,000",
+        label: { zh: "均衡评论 benchmark", en: "balanced review benchmark", zhHant: "均衡評論 benchmark" }
+      },
+      {
+        value: "0.9983",
+        label: { zh: "n8n Agent JSON validity", en: "n8n Agent JSON validity", zhHant: "n8n Agent JSON validity" }
+      }
+    ],
     highlights: {
       zh: [
         "构建面向电商评论的 evidence-grounded review intelligence 流程，将情感分类、主题发现、证据抽取与业务洞察生成整合为可检查的多阶段分析框架。",

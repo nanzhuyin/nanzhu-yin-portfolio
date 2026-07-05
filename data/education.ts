@@ -1,6 +1,7 @@
-import type { LocalizedText } from "./types";
+import type { EntityBadge, LocalizedText } from "./types";
 
 export type Education = {
+  badge: EntityBadge;
   school: LocalizedText;
   degree: LocalizedText;
   period: string;
@@ -9,12 +10,14 @@ export type Education = {
 
 export const education: Education[] = [
   {
+    badge: { label: "LU", tone: "cyan" },
     school: { zh: "岭南大学", en: "Lingnan University", zhHant: "嶺南大學" },
     degree: { zh: "博士，人工智能｜已录取", en: "PhD, Artificial Intelligence | Admitted", zhHant: "博士，人工智慧｜已錄取" },
     period: "2026 - 2029",
     details: { zh: "预计 2026 - 2029", en: "Expected 2026 - 2029", zhHant: "預計 2026 - 2029" }
   },
   {
+    badge: { label: "LU", tone: "cyan" },
     school: { zh: "岭南大学", en: "Lingnan University", zhHant: "嶺南大學" },
     degree: {
       zh: "硕士，人工智能与商业分析｜GPA：3.53/4.0｜Distinction 毕业",
@@ -29,6 +32,7 @@ export const education: Education[] = [
     }
   },
   {
+    badge: { label: "LU", tone: "cyan" },
     school: { zh: "岭南大学", en: "Lingnan University", zhHant: "嶺南大學" },
     degree: {
       zh: "融合科技理学硕士｜GPA：3.33/4.0",
@@ -43,6 +47,7 @@ export const education: Education[] = [
     }
   },
   {
+    badge: { label: "CQ", tone: "sky" },
     school: { zh: "重庆科技大学", en: "Chongqing University of Science and Technology", zhHant: "重慶科技大學" },
     degree: { zh: "本科，能源化学工程", en: "Bachelor, Energy and Chemical Engineering", zhHant: "本科，能源化學工程" },
     period: "2020 - 2024",

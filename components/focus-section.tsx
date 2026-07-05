@@ -18,8 +18,7 @@ export function FocusSection() {
             key={t(item.title, locale)}
             className="group panel rounded-lg p-6 transition hover:-translate-y-1 hover:border-cyan-300/40 md:p-7"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.06 }}
           >
             <div className="mono mb-6 text-xs text-lime-200 light:text-green-700">{String(index + 1).padStart(2, "0")}</div>

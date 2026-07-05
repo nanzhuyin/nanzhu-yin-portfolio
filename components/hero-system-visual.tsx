@@ -1,11 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { affiliations } from "@/data/affiliations";
 import { profile } from "@/data/profile";
 import type { LocalizedText } from "@/data/types";
 import { t, tl } from "@/lib/i18n";
-import { AffiliationLogo } from "./affiliation-logo";
 import { useSite } from "./site-provider";
 
 const caption = {
@@ -56,12 +54,6 @@ export function HeroSystemVisual() {
             </span>
           ))}
         </div>
-      </div>
-
-      <div className="relative z-10 mt-5 grid grid-cols-4 gap-2">
-        {affiliations.map((item) => (
-          <AffiliationLogo key={item.id} affiliation={item} compact />
-        ))}
       </div>
 
       <div className="relative z-10 mt-5 grid gap-3 border border-cyan-300/15 bg-slate-950/25 p-4 light:bg-white/70">

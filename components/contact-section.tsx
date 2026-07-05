@@ -23,8 +23,7 @@ export function ContactSection() {
       <motion.div
         className="panel overflow-hidden rounded-lg"
         initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45 }}
       >
         <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">

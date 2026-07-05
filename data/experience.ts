@@ -1,7 +1,8 @@
-import type { LocalizedList, LocalizedText } from "./types";
+import type { EntityBadge, LocalizedList, LocalizedText } from "./types";
 
 export type Experience = {
   id: string;
+  badge: EntityBadge;
   company: LocalizedText;
   period: string;
   role: LocalizedText;
@@ -13,6 +14,7 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     id: "kaidi-feiyan",
+    badge: { label: "KD", tone: "lime" },
     company: {
       zh: "成都凯迪飞研科技有限责任公司",
       en: "Chengdu Kaidi Feiyan Technology Co., Ltd.",
@@ -53,8 +55,8 @@ export const experience: Experience[] = [
         "参与内网 AI 公文排版系统部署与联调，将 GPUStack 作为主用 AI 后端，通过 HiClaw/CoPaw、Matrix/Element 和部门 Worker 实现「上传 Word 文档 -> 自动识别 -> 自动排版 -> 返回 DOCX」的闭环。",
         "整理 10 个部门独立房间与专属 Worker 的部署方案，覆盖仿真、技术、综管、机载、市场、采购、党群、质量、产品、财务，形成一部门一房间、一 Worker、一目录的隔离方案。",
         "部署并记录 LightRAG Server + WebUI 知识库链路，接入 qwen3.6:27b 与 qwen3-embedding:4b，完成文档上传、知识图谱生成、/query API 查询、references 返回与 naive/local 检索测试。",
-        "整理 LightRAG 模块机制，覆盖 parser、chunker、embedding、实体关系抽取、图谱存储、query 模式、references、LLM cache 与 rerank 的作用边界。",
         "参与「基于大模型的领域自适应指令增强技术」总体方案整理，明确「领域文档解析 -> 知识图谱构建 -> Wiki 页面生成 -> 术语映射表发布 -> 运行时指令增强 -> 知识检索接口 -> 反馈闭环演进」的技术路线。",
+        "整理 LightRAG 模块机制，覆盖 parser、chunker、embedding、实体关系抽取、图谱存储、query 模式、references、LLM cache 与 rerank 的作用边界。",
         "细化文档接入、解析与分块方案，梳理 MinerUReader、SimpleDirectoryReader、OCR、版面解析、Markdown 结构化输出、EntityFragmentizer 实体分片及 Qwen3-Embedding-4B 向量化流程。",
         "规划 PostgreSQL + Neo4j + Milvus 数据架构与检索链路，区分文档元数据、实体关系图谱、向量索引、Wiki 页面、术语映射表、查询日志和审核记录等核心数据对象。",
         "梳理 RESTful API 与模块设计，覆盖文档上传、解析任务查询、图谱构建、Wiki 生成、术语映射发布、指令规范化、知识检索、日志审计等接口与功能模块。",
@@ -64,8 +66,8 @@ export const experience: Experience[] = [
         "Participated in deployment and integration of an intranet AI document-formatting system, using GPUStack as the primary AI backend and connecting HiClaw/CoPaw, Matrix/Element, and department Workers to close the Word upload -> recognition -> formatting -> DOCX return loop.",
         "Organized deployment plans for 10 department-specific rooms and dedicated Workers, covering simulation, technology, administration, avionics, marketing, procurement, party affairs, quality, product, and finance, with one room, one Worker, and one directory per department.",
         "Deployed and documented the LightRAG Server + WebUI knowledge-base flow, connecting qwen3.6:27b and qwen3-embedding:4b, and completing document upload, knowledge graph generation, /query API calls, references return, and naive/local retrieval tests.",
-        "Documented LightRAG module mechanisms, including parser, chunker, embedding, entity-relation extraction, graph storage, query modes, references, LLM cache, and rerank boundaries.",
         "Contributed to the overall plan for domain-adaptive instruction enhancement based on large models, defining the route from domain document parsing to knowledge graph construction, Wiki page generation, terminology mapping publication, runtime instruction enhancement, knowledge retrieval APIs, and feedback-loop evolution.",
+        "Documented LightRAG module mechanisms, including parser, chunker, embedding, entity-relation extraction, graph storage, query modes, references, LLM cache, and rerank boundaries.",
         "Detailed document ingestion, parsing, and chunking plans, covering MinerUReader, SimpleDirectoryReader, OCR, layout parsing, Markdown structured output, EntityFragmentizer entity fragments, and Qwen3-Embedding-4B vectorization.",
         "Planned a PostgreSQL + Neo4j + Milvus data architecture and retrieval chain, separating document metadata, entity-relation graphs, vector indexes, Wiki pages, terminology mappings, query logs, and audit records.",
         "Outlined RESTful APIs and modules for document upload, parsing-task queries, graph construction, Wiki generation, terminology mapping publication, instruction normalization, knowledge retrieval, and log auditing.",
@@ -75,8 +77,8 @@ export const experience: Experience[] = [
         "參與內網 AI 公文排版系統部署與聯調，將 GPUStack 作為主用 AI 後端，透過 HiClaw/CoPaw、Matrix/Element 和部門 Worker 實現「上傳 Word 文檔 -> 自動識別 -> 自動排版 -> 返回 DOCX」的閉環。",
         "整理 10 個部門獨立房間與專屬 Worker 的部署方案，覆蓋仿真、技術、綜管、機載、市場、採購、黨群、質量、產品、財務，形成一部門一房間、一 Worker、一目錄的隔離方案。",
         "部署並記錄 LightRAG Server + WebUI 知識庫鏈路，接入 qwen3.6:27b 與 qwen3-embedding:4b，完成文檔上傳、知識圖譜生成、/query API 查詢、references 返回與 naive/local 檢索測試。",
-        "整理 LightRAG 模組機制，覆蓋 parser、chunker、embedding、實體關係抽取、圖譜存儲、query 模式、references、LLM cache 與 rerank 的作用邊界。",
         "參與「基於大模型的領域自適應指令增強技術」總體方案整理，明確「領域文檔解析 -> 知識圖譜構建 -> Wiki 頁面生成 -> 術語映射表發布 -> 運行時指令增強 -> 知識檢索接口 -> 反饋閉環演進」的技術路線。",
+        "整理 LightRAG 模組機制，覆蓋 parser、chunker、embedding、實體關係抽取、圖譜存儲、query 模式、references、LLM cache 與 rerank 的作用邊界。",
         "細化文檔接入、解析與分塊方案，梳理 MinerUReader、SimpleDirectoryReader、OCR、版面解析、Markdown 結構化輸出、EntityFragmentizer 實體分片及 Qwen3-Embedding-4B 向量化流程。",
         "規劃 PostgreSQL + Neo4j + Milvus 數據架構與檢索鏈路，區分文檔元資料、實體關係圖譜、向量索引、Wiki 頁面、術語映射表、查詢日誌和審核記錄等核心數據對象。",
         "梳理 RESTful API 與模組設計，覆蓋文檔上傳、解析任務查詢、圖譜構建、Wiki 生成、術語映射發布、指令規範化、知識檢索、日誌審計等接口與功能模組。",
@@ -86,6 +88,7 @@ export const experience: Experience[] = [
   },
   {
     id: "xiechuang-data",
+    badge: { label: "XC", tone: "emerald" },
     company: {
       zh: "协创数据技术股份有限公司",
       en: "Xiechuang Data Technology Co., Ltd.",

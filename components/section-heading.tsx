@@ -23,8 +23,7 @@ export function SectionHeading({
     <motion.div
       className="mb-8 grid gap-3 md:mb-10 md:grid-cols-[220px_1fr] md:gap-10"
       initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, ease: "easeOut" }}
     >
       <div className="mono text-xs uppercase text-cyan-200 light:text-cyan-800">{resolve(eyebrow)}</div>

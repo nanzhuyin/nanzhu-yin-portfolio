@@ -20,8 +20,7 @@ export function StackSection() {
             key={t(group.title, locale)}
             className="panel relative overflow-hidden rounded-lg p-5"
             initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.04, duration: 0.42 }}
           >
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/80 to-transparent" />

@@ -7,3 +7,8 @@ export type LocalizedList = Record<Locale, string[]>;
 export type ProjectCategory = "security" | "rag" | "data" | "blockchain";
 
 export type ThemeMode = "dark" | "light";
+
+export type EntityBadge = {
+  label: string;
+  tone: "cyan" | "sky" | "lime" | "emerald";
+};
