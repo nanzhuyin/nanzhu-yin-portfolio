@@ -18,11 +18,11 @@ export const profileHighlights: ProfileHighlight[] = [
   },
   {
     label: { zh: "Master", en: "Master", zhHant: "Master" },
-    value: { zh: "Distinction 毕业", en: "Distinction graduate", zhHant: "Distinction 畢業" },
+    value: { zh: "双硕士背景", en: "Dual master's background", zhHant: "雙碩士背景" },
     detail: {
-      zh: "人工智能与商业分析硕士，GPA 3.53/4.0",
-      en: "MSc Artificial Intelligence and Business Analytics, GPA 3.53/4.0",
-      zhHant: "人工智慧與商業分析碩士，GPA 3.53/4.0"
+      zh: "人工智能与商业分析硕士 Distinction，融合科技理学硕士",
+      en: "MSc in AI and Business Analytics with Distinction; MSc in Integrated Technology",
+      zhHant: "人工智慧與商業分析碩士 Distinction，融合科技理學碩士"
     }
   },
   {

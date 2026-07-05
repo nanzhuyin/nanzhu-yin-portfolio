@@ -30,7 +30,11 @@ export const education: Education[] = [
   },
   {
     school: { zh: "岭南大学", en: "Lingnan University", zhHant: "嶺南大學" },
-    degree: { zh: "硕士，融合科技｜GPA：3.33/4.0", en: "Master, Integrated Technology | GPA: 3.33/4.0", zhHant: "碩士，融合科技｜GPA：3.33/4.0" },
+    degree: {
+      zh: "融合科技理学硕士｜GPA：3.33/4.0",
+      en: "MSc in Integrated Technology | GPA: 3.33/4.0",
+      zhHant: "融合科技理學碩士｜GPA：3.33/4.0"
+    },
     period: "2024 - 2025",
     details: {
       zh: "主修：计算机系统与编程基础、控制系统与人工智能应用、产品与流程设计",

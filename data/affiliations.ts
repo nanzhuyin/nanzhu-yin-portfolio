@@ -20,9 +20,9 @@ export const affiliations: Affiliation[] = [
     kind: { zh: "教育", en: "Education", zhHant: "教育" },
     name: { zh: "岭南大学", en: "Lingnan University", zhHant: "嶺南大學" },
     role: {
-      zh: "AI 博士已录取｜AI 与商业分析硕士",
-      en: "AI PhD admitted | MSc in AI and Business Analytics",
-      zhHant: "AI 博士已錄取｜AI 與商業分析碩士"
+      zh: "AI 博士已录取｜AI 与商业分析硕士｜融合科技理学硕士",
+      en: "AI PhD admitted | MSc in AI and Business Analytics | MSc in Integrated Technology",
+      zhHant: "AI 博士已錄取｜AI 與商業分析碩士｜融合科技理學碩士"
     },
     period: "2024 - 2029",
     signal: {
