@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { i18n } from "@/data/i18n";
 import { profile } from "@/data/profile";
 import { t } from "@/lib/i18n";
+import { withBasePath } from "@/lib/paths";
 import { useSite } from "./site-provider";
 import { SectionHeading } from "./section-heading";
 
@@ -32,7 +33,7 @@ export function ContactSection() {
             <h3 className="mt-5 text-3xl font-semibold leading-tight text-white light:text-slate-950">{t(profile.name, locale)}</h3>
             <p className="mt-4 text-sm leading-7 text-slate-400 light:text-slate-600">{t(profile.target, locale)}</p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a className="button-primary" href="/cv.pdf" download>
+              <a className="button-primary" href={withBasePath("/cv.pdf")} download>
                 {t(i18n.actions.downloadCv, locale)}
               </a>
               <a className="button-secondary" href={`mailto:${profile.email}`}>

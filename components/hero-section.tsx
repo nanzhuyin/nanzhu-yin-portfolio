@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { i18n } from "@/data/i18n";
 import { profile } from "@/data/profile";
 import { t, tl } from "@/lib/i18n";
+import { withBasePath } from "@/lib/paths";
 import { useSite } from "./site-provider";
 import { KnowledgeBackground } from "./knowledge-background";
 import { HeroSystemVisual } from "./hero-system-visual";
@@ -58,7 +59,7 @@ export function HeroSection() {
           </p>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-500 light:text-slate-500">{t(profile.target, locale)}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a className="button-primary" href="/cv.pdf" download>
+            <a className="button-primary" href={withBasePath("/cv.pdf")} download>
               {t(i18n.actions.downloadCv, locale)}
             </a>
             <a className="button-secondary" href="#projects">

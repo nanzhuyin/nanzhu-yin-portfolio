@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { EntityBadge as EntityBadgeData } from "@/data/types";
+import { withBasePath } from "@/lib/paths";
 
 const toneClassName: Record<EntityBadgeData["tone"], string> = {
   cyan: "border-cyan-300/35 bg-cyan-300/10 text-cyan-100 light:text-cyan-900",
@@ -20,7 +21,7 @@ export function EntityBadge({ badge, className = "" }: { badge: EntityBadgeData;
     >
       {badge.imageSrc ? (
         <Image
-          src={badge.imageSrc}
+          src={withBasePath(badge.imageSrc)}
           alt=""
           width={isWideLogo ? 76 : 34}
           height={34}
