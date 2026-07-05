@@ -1,4 +1,5 @@
 import { AboutSection } from "./about-section";
+import { AffiliationsSection } from "./affiliations-section";
 import { ContactSection } from "./contact-section";
 import { EducationSection } from "./education-section";
 import { ExperienceSection } from "./experience-section";
@@ -17,6 +18,7 @@ export function HomePage() {
         <HeroSection />
         <ProfileHighlightsSection />
         <AboutSection />
+        <AffiliationsSection />
         <FocusSection />
         <ProjectsSection />
         <ExperienceSection />

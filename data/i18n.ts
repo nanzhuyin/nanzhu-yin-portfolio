@@ -12,6 +12,7 @@ export const i18n = {
   nav: {
     home: { zh: "首页", en: "Home", zhHant: "首頁" },
     about: { zh: "简介", en: "About", zhHant: "簡介" },
+    affiliations: { zh: "履历", en: "Affiliations", zhHant: "履歷" },
     focus: { zh: "方向", en: "Focus", zhHant: "方向" },
     projects: { zh: "项目", en: "Projects", zhHant: "項目" },
     experience: { zh: "经历", en: "Experience", zhHant: "經歷" },
@@ -34,6 +35,15 @@ export const i18n = {
     about: {
       eyebrow: { zh: "Profile", en: "Profile", zhHant: "Profile" },
       title: { zh: "研究型工程个人主页", en: "Research-engineering profile", zhHant: "研究型工程個人主頁" }
+    },
+    affiliations: {
+      eyebrow: { zh: "Affiliations", en: "Affiliations", zhHant: "Affiliations" },
+      title: { zh: "教育与实践节点", en: "Education and practice nodes", zhHant: "教育與實踐節點" },
+      description: {
+        zh: "从人工智能研究训练到企业级系统部署实践，串联当前学习与工程经历。",
+        en: "A path from AI research training to enterprise system deployment practice.",
+        zhHant: "從人工智慧研究訓練到企業級系統部署實踐，串聯目前學習與工程經歷。"
+      }
     },
     focus: {
       eyebrow: { zh: "Research Focus", en: "Research Focus", zhHant: "Research Focus" },
@@ -77,6 +87,7 @@ export const i18n = {
 export const navItems = [
   ["home", "home"],
   ["about", "about"],
+  ["affiliations", "affiliations"],
   ["focus", "focus"],
   ["projects", "projects"],
   ["experience", "experience"],
