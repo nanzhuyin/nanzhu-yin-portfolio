@@ -1,38 +1,42 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { i18n } from "@/data/i18n";
 import { publications } from "@/data/publications";
 import { t } from "@/lib/i18n";
+import { revealTransition, revealVariants, revealViewport } from "@/lib/motion";
 import { SectionHeading } from "./section-heading";
 import { useSite } from "./site-provider";
 
 export function PublicationsSection() {
   const { locale } = useSite();
+  const reduceMotion = useReducedMotion();
 
   return (
-    <section id="publications" className="shell section-band py-20">
-      <SectionHeading eyebrow={i18n.sections.publications.eyebrow} title={i18n.sections.publications.title} />
+    <section id="publications" className="shell section-band section-space">
+      <SectionHeading number="03" eyebrow={i18n.sections.publications.eyebrow} title={i18n.sections.publications.title} />
 
-      <div className="relative grid gap-3">
-        <div className="absolute left-4 top-4 hidden h-[calc(100%-2rem)] w-px bg-gradient-to-b from-cyan-300/70 via-cyan-300/20 to-transparent md:block" />
+      <div className="border-y border-[rgb(var(--line)/0.13)]">
         {publications.map((item, index) => (
           <motion.article
             key={item.id}
-            className="panel relative rounded-lg p-5 md:ml-10"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.045, duration: 0.4 }}
+            className="grid gap-4 border-b border-[rgb(var(--line)/0.11)] py-6 last:border-b-0 md:grid-cols-12 md:gap-8 md:py-8"
+            initial={reduceMotion ? false : "hidden"}
+            whileInView="visible"
+            viewport={revealViewport}
+            variants={revealVariants}
+            transition={revealTransition(index * 0.045)}
           >
-            <span className="absolute -left-[2.15rem] top-6 hidden h-3 w-3 rounded-full border border-cyan-300 bg-ink-950 shadow-glow light:bg-white md:block" />
-            <div className="flex flex-wrap items-start justify-between gap-3">
-              <div>
-                <p className="mono text-xs uppercase text-cyan-200 light:text-cyan-800">{item.venue}</p>
-                <h3 className="mt-2 text-base font-semibold leading-7 text-white light:text-slate-950">{t(item.title, locale)}</h3>
-              </div>
-              <span className="tag shrink-0 border-lime-300/20 bg-lime-300/5 text-lime-100 light:text-emerald-900">
-                {t(item.status, locale)}
-              </span>
+            <div className="flex items-baseline justify-between md:col-span-2 md:block">
+              <span className="display text-5xl leading-none text-[rgb(var(--accent))]">{String(index + 1).padStart(2, "0")}</span>
+              <p className="mono mt-3 text-[9px] uppercase tracking-[0.12em] text-[rgb(var(--faint))]">{item.venue}</p>
+            </div>
+            <div className="md:col-span-8">
+              <h3 className="max-w-4xl text-base font-medium leading-7 text-[rgb(var(--text))] md:text-xl md:leading-8">{t(item.title, locale)}</h3>
+              {item.note ? <p className="mt-3 text-sm leading-7 text-[rgb(var(--muted))]">{t(item.note, locale)}</p> : null}
+            </div>
+            <div className="md:col-span-2 md:text-right">
+              <span className="status-tag tag">{t(item.status, locale)}</span>
             </div>
           </motion.article>
         ))}

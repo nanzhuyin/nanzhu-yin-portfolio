@@ -1,16 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { i18n } from "@/data/i18n";
 import { profile } from "@/data/profile";
+import { i18n } from "@/data/i18n";
 import { t } from "@/lib/i18n";
 import { withBasePath } from "@/lib/paths";
 import { useSite } from "./site-provider";
 import { SectionHeading } from "./section-heading";
+import { MotionReveal } from "./motion-reveal";
 
 export function ContactSection() {
   const { locale } = useSite();
-
   const contacts = [
     { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
     { label: "Phone", value: profile.phone, href: `tel:${profile.phone}` },
@@ -18,49 +17,44 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contact" className="shell section-band py-20">
-      <SectionHeading eyebrow={i18n.sections.contact.eyebrow} title={i18n.sections.contact.title} />
+    <section id="contact" className="shell section-band section-space">
+      <SectionHeading number="08" eyebrow={i18n.sections.contact.eyebrow} title={i18n.sections.contact.title} />
 
-      <motion.div
-        className="panel overflow-hidden rounded-lg"
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45 }}
-      >
-        <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="border-b border-white/10 p-6 light:border-slate-200 lg:border-b-0 lg:border-r">
-            <p className="mono text-xs uppercase text-cyan-200 light:text-cyan-800">{t(i18n.labels.sourceNote, locale)}</p>
-            <h3 className="mt-5 text-3xl font-semibold leading-tight text-white light:text-slate-950">{t(profile.name, locale)}</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-400 light:text-slate-600">{t(profile.target, locale)}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <a className="button-primary" href={withBasePath("/cv.pdf")} download>
-                {t(i18n.actions.downloadCv, locale)}
-              </a>
-              <a className="button-secondary" href={`mailto:${profile.email}`}>
-                {t(i18n.actions.contactMe, locale)}
-              </a>
+      <MotionReveal className="panel panel-rule overflow-hidden">
+        <div className="grid lg:grid-cols-12">
+          <div className="border-b border-[rgb(var(--line)/0.12)] p-6 md:p-9 lg:col-span-5 lg:border-b-0 lg:border-r">
+            <p className="eyebrow">Closing frame / Contact</p>
+            <h3 className="display mt-8 text-[clamp(3.5rem,7vw,7rem)] leading-[0.82] text-[rgb(var(--text))]">{t(profile.name, locale)}</h3>
+            <p className="mt-7 max-w-md text-sm leading-8 text-[rgb(var(--muted))]">{t(profile.target, locale)}</p>
+            <p className="mono mt-6 text-[9px] uppercase tracking-[0.14em] text-[rgb(var(--faint))]">{t(i18n.labels.sourceNote, locale)}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a className="button-primary" href={`mailto:${profile.email}`}>{t(i18n.actions.contactMe, locale)} <span aria-hidden="true">↗</span></a>
+              <a className="button-secondary" href={withBasePath("/cv.pdf")} download>{t(i18n.actions.downloadCv, locale)}</a>
             </div>
           </div>
 
-          <div className="divide-y divide-white/10 light:divide-slate-200">
-            {contacts.map((contact) => (
-              <a
-                key={contact.href}
-                href={contact.href}
-                target={contact.href.startsWith("http") ? "_blank" : undefined}
-                rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group grid gap-2 p-5 transition hover:bg-cyan-300/5 sm:grid-cols-[120px_1fr_auto]"
-              >
-                <span className="mono text-xs text-slate-500 light:text-slate-500">{contact.label}</span>
-                <span className="break-all text-sm font-medium text-slate-200 light:text-slate-800">{contact.value}</span>
-                <span className="mono text-xs text-cyan-200 opacity-70 transition group-hover:translate-x-1 group-hover:opacity-100 light:text-cyan-800">
-                  OPEN
-                </span>
-              </a>
-            ))}
+          <div className="divide-y divide-[rgb(var(--line)/0.12)] lg:col-span-7">
+            {contacts.map((contact, index) => {
+              const external = contact.href.startsWith("http");
+              return (
+                <a
+                  key={contact.href}
+                  href={contact.href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noreferrer" : undefined}
+                  className="group grid min-h-24 items-center gap-2 px-6 py-5 transition-colors hover:bg-[rgb(var(--surface-2)/0.45)] sm:grid-cols-[3rem_7rem_1fr_auto] md:px-9"
+                  aria-label={external ? `${contact.label}: ${contact.value} (external link)` : undefined}
+                >
+                  <span className="mono text-[10px] text-[rgb(var(--accent))]">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="mono text-[10px] uppercase tracking-[0.12em] text-[rgb(var(--faint))]">{contact.label}</span>
+                  <span className="break-all text-sm font-medium leading-6 text-[rgb(var(--text))]">{contact.value}</span>
+                  <span className="text-lg text-[rgb(var(--accent))] transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span>
+                </a>
+              );
+            })}
           </div>
         </div>
-      </motion.div>
+      </MotionReveal>
     </section>
   );
 }

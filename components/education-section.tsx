@@ -1,57 +1,59 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { awards, education } from "@/data/education";
 import { i18n } from "@/data/i18n";
 import { t, tl } from "@/lib/i18n";
+import { revealTransition, revealVariants, revealViewport } from "@/lib/motion";
 import { EntityBadge } from "./entity-badge";
 import { useSite } from "./site-provider";
 import { SectionHeading } from "./section-heading";
 
 export function EducationSection() {
   const { locale } = useSite();
+  const reduceMotion = useReducedMotion();
 
   return (
-    <section id="education" className="shell section-band py-20">
-      <SectionHeading eyebrow={i18n.sections.education.eyebrow} title={i18n.sections.education.title} />
+    <section id="education" className="shell section-band section-space">
+      <SectionHeading number="05" eyebrow={i18n.sections.education.eyebrow} title={i18n.sections.education.title} />
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_0.34fr]">
-        <div className="relative grid gap-4">
-          <div className="absolute left-[21px] top-4 hidden h-[calc(100%-2rem)] w-px bg-gradient-to-b from-cyan-300/70 via-cyan-300/20 to-transparent md:block" />
+      <div className="grid gap-10 lg:grid-cols-12">
+        <div className="relative lg:col-span-9">
+          <div className="absolute bottom-0 left-[1.4rem] top-0 w-px bg-[rgb(var(--line)/0.13)]" aria-hidden="true" />
           {education.map((item, index) => (
             <motion.article
               key={`${item.period}-${t(item.degree, locale)}`}
-              className="panel relative rounded-lg p-5 md:ml-16"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05, duration: 0.4 }}
+              className="relative grid gap-4 border-t border-[rgb(var(--line)/0.12)] py-7 pl-16 first:border-t-0 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-8"
+              initial={reduceMotion ? false : "hidden"}
+              whileInView="visible"
+              viewport={revealViewport}
+              variants={revealVariants}
+              transition={revealTransition(index * 0.05)}
             >
-              <div className="grid gap-4 sm:grid-cols-[1fr_auto] sm:items-start">
-                <div>
-                  <div className="flex items-start gap-3">
-                    <EntityBadge badge={item.badge} className="md:absolute md:-left-[4.35rem] md:top-5" />
-                    <h3 className="text-xl font-semibold text-white light:text-slate-950">{t(item.school, locale)}</h3>
-                  </div>
-                  <p className="mt-2 text-sm leading-7 text-slate-300 light:text-slate-700">{t(item.degree, locale)}</p>
-                  {item.details ? <p className="mt-2 text-sm leading-7 text-slate-500 light:text-slate-500">{t(item.details, locale)}</p> : null}
-                </div>
-                <p className="mono text-sm text-cyan-200 light:text-cyan-800">{item.period}</p>
+              <EntityBadge badge={item.badge} className={`absolute left-0 ${index === 0 ? "top-0" : "top-6"}`} />
+              <div>
+                <h3 className="text-xl font-medium text-[rgb(var(--text))] md:text-2xl">{t(item.school, locale)}</h3>
+                <p className="mt-2 text-sm leading-7 text-[rgb(var(--muted))]">{t(item.degree, locale)}</p>
+                {item.details ? <p className="mt-2 text-xs leading-6 text-[rgb(var(--faint))]">{t(item.details, locale)}</p> : null}
               </div>
+              <p className="mono text-[10px] uppercase tracking-[0.12em] text-[rgb(var(--accent))]">{item.period}</p>
             </motion.article>
           ))}
         </div>
 
         <motion.aside
-          className="panel rounded-lg p-5"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.42 }}
+          className="border-t border-[rgb(var(--accent))] pt-5 lg:col-span-3"
+          initial={reduceMotion ? false : "hidden"}
+          whileInView="visible"
+          viewport={revealViewport}
+          variants={revealVariants}
+          transition={revealTransition(0.08)}
         >
-          <p className="mono text-xs uppercase text-cyan-200 light:text-cyan-800">{t(i18n.labels.awards, locale)}</p>
-          <ul className="mt-5 grid gap-3">
-            {tl(awards, locale).map((award) => (
-              <li key={award} className="grid grid-cols-[10px_1fr] gap-3 text-sm leading-7 text-slate-400 light:text-slate-600">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-lime-300" />
+          <p className="eyebrow">{t(i18n.labels.awards, locale)}</p>
+          <ul className="mt-6 grid gap-5">
+            {tl(awards, locale).map((award, index) => (
+              <li key={award} className="grid grid-cols-[1.75rem_1fr] gap-3 text-sm leading-7 text-[rgb(var(--muted))]">
+                <span className="mono text-[10px] text-[rgb(var(--accent))]">{String(index + 1).padStart(2, "0")}</span>
                 <span>{award}</span>
               </li>
             ))}

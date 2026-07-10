@@ -1,81 +1,47 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { sceneTransition } from "@/lib/motion";
 
-const nodes = [
-  [18, 28],
-  [36, 18],
-  [58, 30],
-  [76, 17],
-  [86, 43],
-  [68, 62],
-  [44, 55],
-  [25, 72]
-];
-
-const edges = [
-  [0, 1],
-  [1, 2],
-  [2, 3],
-  [2, 6],
-  [3, 4],
-  [4, 5],
-  [5, 6],
-  [6, 7],
-  [0, 7]
+const points = [
+  [8, 62],
+  [25, 34],
+  [45, 46],
+  [62, 18],
+  [82, 32],
+  [94, 9]
 ];
 
 export function KnowledgeBackground() {
+  const reduceMotion = useReducedMotion();
+
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-      <div className="absolute inset-x-0 top-24 h-px bg-gradient-to-r from-transparent via-cyan-300/45 to-transparent" />
-      <div className="absolute right-0 top-0 h-full w-1/2 bg-[linear-gradient(135deg,transparent_0_42%,rgba(34,211,238,0.08)_42.2%,transparent_42.8%_100%)]" />
+    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      <div className="absolute inset-y-0 right-[9%] w-px bg-[rgb(var(--line)/0.07)]" />
+      <div className="absolute right-[9%] top-[14%] h-px w-[54%] bg-[rgb(var(--line)/0.07)]" />
+      <div className="absolute right-[9%] top-[14%] h-[58%] w-[54%] border border-[rgb(var(--line)/0.055)]" />
       <motion.svg
-        aria-hidden="true"
-        className="absolute right-0 top-20 h-[520px] w-[min(58vw,720px)] opacity-70"
-        viewBox="0 0 100 100"
-        initial={{ opacity: 0, scale: 0.96 }}
-        animate={{ opacity: 0.72, scale: 1 }}
-        transition={{ duration: 1.1, ease: "easeOut" }}
+        className="absolute right-[-7rem] top-28 h-[38rem] w-[min(60rem,68vw)] opacity-55"
+        viewBox="0 0 100 80"
+        initial={reduceMotion ? false : { opacity: 0 }}
+        animate={{ opacity: 0.55 }}
+        transition={sceneTransition}
       >
-        <defs>
-          <linearGradient id="edgeGradient" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0%" stopColor="rgb(34, 211, 238)" stopOpacity="0.1" />
-            <stop offset="55%" stopColor="rgb(34, 211, 238)" stopOpacity="0.45" />
-            <stop offset="100%" stopColor="rgb(140, 255, 116)" stopOpacity="0.24" />
-          </linearGradient>
-        </defs>
-        {edges.map(([from, to], index) => {
-          const a = nodes[from];
-          const b = nodes[to];
-          return (
-            <motion.line
-              key={`${from}-${to}`}
-              x1={a[0]}
-              y1={a[1]}
-              x2={b[0]}
-              y2={b[1]}
-              stroke="url(#edgeGradient)"
-              strokeWidth="0.22"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{ delay: 0.08 * index, duration: 1.1, ease: "easeInOut" }}
-            />
-          );
-        })}
-        {nodes.map(([x, y], index) => (
-          <motion.circle
-            key={`${x}-${y}`}
-            cx={x}
-            cy={y}
-            r={index % 3 === 0 ? 1.15 : 0.72}
-            fill={index % 3 === 0 ? "rgb(140, 255, 116)" : "rgb(34, 211, 238)"}
-            initial={{ opacity: 0, scale: 0.2 }}
-            animate={{ opacity: [0.35, 0.9, 0.45], scale: 1 }}
-            transition={{ delay: 0.08 * index, duration: 2.8, repeat: Infinity, repeatType: "reverse" }}
-          />
+        <motion.polyline
+          points={points.map(([x, y]) => `${x},${y}`).join(" ")}
+          fill="none"
+          stroke="rgb(var(--accent))"
+          strokeOpacity="0.34"
+          strokeWidth="0.16"
+          initial={reduceMotion ? false : { pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ ...sceneTransition, delay: 0.18 }}
+        />
+        {points.map(([x, y], index) => (
+          <circle key={`${x}-${y}`} cx={x} cy={y} r={index === 3 ? 0.82 : 0.42} fill="rgb(var(--accent))" opacity={index === 3 ? 0.88 : 0.5} />
         ))}
       </motion.svg>
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[rgb(var(--bg))]" />
     </div>
   );
 }

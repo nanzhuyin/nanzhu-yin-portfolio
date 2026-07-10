@@ -12,19 +12,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: {
-          950: "#03070b",
-          900: "#061018",
-          850: "#081522",
-          800: "#0b1c2a"
-        },
-        signal: {
-          cyan: "#22d3ee",
-          blue: "#38bdf8",
-          green: "#8cff74"
-        }
+        canvas: "rgb(var(--bg) / <alpha-value>)",
+        surface: "rgb(var(--surface) / <alpha-value>)",
+        content: "rgb(var(--text) / <alpha-value>)",
+        muted: "rgb(var(--muted) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)"
       },
       fontFamily: {
+        display: [
+          "Iowan Old Style",
+          "Baskerville",
+          "Songti SC",
+          "STSong",
+          "Noto Serif CJK SC",
+          "Georgia",
+          "serif"
+        ],
         sans: [
           "Avenir Next",
           "PingFang SC",
@@ -40,10 +43,6 @@ const config: Config = {
           "Menlo",
           "monospace"
         ]
-      },
-      boxShadow: {
-        glow: "0 0 42px rgba(34, 211, 238, 0.18)",
-        panel: "0 24px 80px rgba(0, 0, 0, 0.36)"
       }
     }
   },

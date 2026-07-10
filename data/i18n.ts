@@ -83,12 +83,12 @@ export const i18n = {
 
 export const navItems = [
   ["home", "home"],
-  ["about", "about"],
   ["focus", "focus"],
   ["projects", "projects"],
   ["publications", "publications"],
   ["experience", "experience"],
   ["education", "education"],
+  ["about", "about"],
   ["stack", "stack"],
   ["contact", "contact"]
 ] as const;

@@ -1,17 +1,19 @@
 "use client";
 
-import { motion } from "framer-motion";
 import type { LocalizedText } from "@/data/types";
 import { t } from "@/lib/i18n";
 import { useSite } from "./site-provider";
+import { MotionReveal } from "./motion-reveal";
 
 type HeadingText = string | LocalizedText;
 
 export function SectionHeading({
+  number,
   eyebrow,
   title,
   description
 }: {
+  number: string;
   eyebrow: HeadingText;
   title: HeadingText;
   description?: HeadingText;
@@ -20,19 +22,22 @@ export function SectionHeading({
   const resolve = (value: HeadingText) => (typeof value === "string" ? value : t(value, locale));
 
   return (
-    <motion.div
-      className="mb-8 grid gap-3 md:mb-10 md:grid-cols-[220px_1fr] md:gap-10"
-      initial={{ opacity: 0, y: 18 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, ease: "easeOut" }}
-    >
-      <div className="mono text-xs uppercase text-cyan-200 light:text-cyan-800">{resolve(eyebrow)}</div>
-      <div>
-        <h2 className="max-w-3xl text-3xl font-semibold leading-tight text-white light:text-slate-950 md:text-5xl">
+    <MotionReveal className="mb-12 grid gap-6 md:mb-16 md:grid-cols-12 md:gap-8">
+      <div className="md:col-span-3">
+        <div className="flex items-center gap-3">
+          <span className="mono text-xs text-[rgb(var(--faint))]">{number}</span>
+          <span className="h-px w-10 bg-[rgb(var(--accent))]" aria-hidden="true" />
+        </div>
+        <p className="eyebrow mt-4">{resolve(eyebrow)}</p>
+      </div>
+      <div className="md:col-span-9">
+        <h2 className="display max-w-5xl text-[clamp(2.65rem,5.8vw,5.75rem)] leading-[0.94] text-[rgb(var(--text))]">
           {resolve(title)}
         </h2>
-        {description ? <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400 light:text-slate-600">{resolve(description)}</p> : null}
+        {description ? (
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-[rgb(var(--muted))] md:text-base md:leading-8">{resolve(description)}</p>
+        ) : null}
       </div>
-    </motion.div>
+    </MotionReveal>
   );
 }

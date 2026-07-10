@@ -8,22 +8,25 @@ import { HeroSection } from "./hero-section";
 import { PublicationsSection } from "./publications-section";
 import { ProjectsSection } from "./projects-section";
 import { StackSection } from "./stack-section";
+import { SiteFooter } from "./site-footer";
 
 export function HomePage() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to main content / 跳至主要内容</a>
       <Header />
-      <main>
+      <main id="main-content">
         <HeroSection />
-        <AboutSection />
         <FocusSection />
         <ProjectsSection />
         <PublicationsSection />
         <ExperienceSection />
         <EducationSection />
+        <AboutSection />
         <StackSection />
         <ContactSection />
       </main>
+      <SiteFooter />
     </>
   );
 }
