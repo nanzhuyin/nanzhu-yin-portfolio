@@ -23,14 +23,14 @@ export function EducationSection() {
           {education.map((item, index) => (
             <motion.article
               key={`${item.period}-${t(item.degree, locale)}`}
-              className="relative grid gap-4 border-t border-[rgb(var(--line)/0.12)] py-7 pl-16 first:border-t-0 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-8"
+              className="relative grid gap-4 border-t border-[rgb(var(--line)/0.12)] py-7 pl-20 first:border-t-0 first:pt-0 sm:grid-cols-[1fr_auto] sm:gap-8"
               initial={reduceMotion ? false : "hidden"}
               whileInView="visible"
               viewport={revealViewport}
               variants={revealVariants}
               transition={revealTransition(index * 0.05)}
             >
-              <EntityBadge badge={item.badge} className={`absolute left-0 ${index === 0 ? "top-0" : "top-6"}`} />
+              <EntityBadge badge={item.badge} className="absolute left-0 top-4" />
               <div>
                 <h3 className="text-xl font-medium text-[rgb(var(--text))] md:text-2xl">{t(item.school, locale)}</h3>
                 <p className="mt-2 text-sm leading-7 text-[rgb(var(--muted))]">{t(item.degree, locale)}</p>

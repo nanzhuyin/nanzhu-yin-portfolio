@@ -12,6 +12,7 @@ export type EntityBadge = {
   label: string;
   imageSrc?: string;
   shape?: "square" | "wide";
+  logoMode?: "full" | "crest";
   icon?: "building";
   tone: "cyan" | "sky" | "lime" | "emerald";
 };

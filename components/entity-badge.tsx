@@ -11,15 +11,24 @@ const toneClassName: Record<EntityBadgeData["tone"], string> = {
 
 export function EntityBadge({ badge, className = "" }: { badge: EntityBadgeData; className?: string }) {
   const isWideLogo = badge.imageSrc && badge.shape === "wide";
+  const isCrestLogo = badge.imageSrc && badge.logoMode === "crest";
 
   return (
     <span
       className={`grid shrink-0 place-items-center overflow-hidden rounded-sm border ${
-        isWideLogo ? "h-11 w-20 p-1.5" : "h-11 w-11 p-1"
+        isCrestLogo ? "h-14 w-14 p-1" : isWideLogo ? "h-11 w-20 p-1.5" : "h-11 w-11 p-1"
       } ${toneClassName[badge.tone]} ${className}`}
       aria-hidden="true"
     >
-      {badge.imageSrc ? (
+      {isCrestLogo ? (
+        <Image
+          src={withBasePath(badge.imageSrc!)}
+          alt=""
+          width={64}
+          height={64}
+          className="h-full w-full object-contain"
+        />
+      ) : badge.imageSrc ? (
         <Image
           src={withBasePath(badge.imageSrc)}
           alt=""

@@ -8,9 +8,25 @@ export type Education = {
   details?: LocalizedText;
 };
 
+const lingnanBadge: EntityBadge = {
+  label: "Lingnan University",
+  imageSrc: "/affiliations/lingnan-crest.svg",
+  shape: "square",
+  logoMode: "crest",
+  tone: "cyan"
+};
+
+const cqustBadge: EntityBadge = {
+  label: "Chongqing University of Science and Technology",
+  imageSrc: "/affiliations/cqust-crest.png",
+  shape: "square",
+  logoMode: "crest",
+  tone: "sky"
+};
+
 export const education: Education[] = [
   {
-    badge: { label: "Lingnan University", imageSrc: "/affiliations/lingnan-university.png", shape: "wide", tone: "cyan" },
+    badge: lingnanBadge,
     school: { zh: "岭南大学", en: "Lingnan University", zhHant: "嶺南大學" },
     degree: {
       zh: "人工智能研究博士｜已录取",
@@ -21,7 +37,7 @@ export const education: Education[] = [
     details: { zh: "预计 2026 - 2029", en: "Expected 2026 - 2029", zhHant: "預計 2026 - 2029" }
   },
   {
-    badge: { label: "Lingnan University", imageSrc: "/affiliations/lingnan-university.png", shape: "wide", tone: "cyan" },
+    badge: lingnanBadge,
     school: { zh: "岭南大学", en: "Lingnan University", zhHant: "嶺南大學" },
     degree: {
       zh: "人工智能与商业分析理学硕士｜GPA：3.53/4.0｜Distinction 毕业",
@@ -36,7 +52,7 @@ export const education: Education[] = [
     }
   },
   {
-    badge: { label: "Lingnan University", imageSrc: "/affiliations/lingnan-university.png", shape: "wide", tone: "cyan" },
+    badge: lingnanBadge,
     school: { zh: "岭南大学", en: "Lingnan University", zhHant: "嶺南大學" },
     degree: {
       zh: "融合科技理学硕士｜GPA：3.33/4.0",
@@ -51,7 +67,7 @@ export const education: Education[] = [
     }
   },
   {
-    badge: { label: "Chongqing University of Science and Technology", imageSrc: "/affiliations/cqust.png", shape: "wide", tone: "sky" },
+    badge: cqustBadge,
     school: { zh: "重庆科技大学", en: "Chongqing University of Science and Technology", zhHant: "重慶科技大學" },
     degree: { zh: "本科，能源化学工程", en: "Bachelor, Energy and Chemical Engineering", zhHant: "本科，能源化學工程" },
     period: "2020 - 2024",
