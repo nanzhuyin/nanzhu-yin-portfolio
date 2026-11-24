@@ -29,9 +29,9 @@ export const education: Education[] = [
     badge: lingnanBadge,
     school: { zh: "岭南大学", en: "Lingnan University", zhHant: "嶺南大學" },
     degree: {
-      zh: "人工智能研究博士｜已录取",
-      en: "PhD in Artificial Intelligence Research | Admitted",
-      zhHant: "人工智慧研究博士｜已錄取"
+      zh: "人工智能研究博士（DAIS）｜已录取",
+      en: "Doctor of Artificial Intelligence Studies (DAIS) | Admitted",
+      zhHant: "人工智能研究博士（DAIS）｜已錄取"
     },
     period: "2026 - 2029",
     details: { zh: "预计 2026 - 2029", en: "Expected 2026 - 2029", zhHant: "預計 2026 - 2029" }

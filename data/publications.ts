@@ -32,12 +32,12 @@ export const publications: Publication[] = [
   {
     id: "wi-iat-2026",
     title: {
-      zh: "Evidence-Grounded Review Intelligence for Adaptive and Trustworthy Knowledge Discovery in E-Commerce Data",
-      en: "Evidence-Grounded Review Intelligence for Adaptive and Trustworthy Knowledge Discovery in E-Commerce Data",
-      zhHant: "Evidence-Grounded Review Intelligence for Adaptive and Trustworthy Knowledge Discovery in E-Commerce Data"
+      zh: "Evidence-Grounded Review Intelligence for Inspectable E-Commerce Knowledge Discovery",
+      en: "Evidence-Grounded Review Intelligence for Inspectable E-Commerce Knowledge Discovery",
+      zhHant: "Evidence-Grounded Review Intelligence for Inspectable E-Commerce Knowledge Discovery"
     },
     venue: "WI-IAT 2026 / CCF C",
-    status: { zh: "已投稿，审稿中", en: "Submitted, under review", zhHant: "已投稿，審稿中" }
+    status: { zh: "已录用（短论文）", en: "Accepted (Short Paper)", zhHant: "已錄用（短論文）" }
   },
   {
     id: "adma-2026",

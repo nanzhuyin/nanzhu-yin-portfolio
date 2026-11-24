@@ -220,11 +220,11 @@ export const projects: Project[] = [
       zhHant: "電商評論可信知識發現與多智能體分析專案"
     },
     status: {
-      zh: "已投 WI-IAT 2026，审稿中，CCF C",
-      en: "Submitted to WI-IAT 2026, under review, CCF C",
-      zhHant: "已投 WI-IAT 2026，審稿中，CCF C"
+      zh: "WI-IAT 2026 已录用（短论文），CCF C",
+      en: "Accepted at WI-IAT 2026 (Short Paper), CCF C",
+      zhHant: "WI-IAT 2026 已錄用（短論文），CCF C"
     },
-    paper: "Evidence-Grounded Review Intelligence for Adaptive and Trustworthy Knowledge Discovery in E-Commerce Data",
+    paper: "Evidence-Grounded Review Intelligence for Inspectable E-Commerce Knowledge Discovery",
     stack: ["Python", "BERT", "BERTopic", "TF-IDF", "Logistic Regression", "Random Forest", "n8n", "DeepSeek", "LLM Agent", "JSON"],
     summary: {
       zh: "将情感分类、主题发现、证据抽取与业务洞察生成整合为可检查的多阶段电商评论知识发现框架。",
