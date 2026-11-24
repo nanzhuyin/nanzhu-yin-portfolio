@@ -22,17 +22,17 @@ export const profile = {
   facts: {
     zh: [
       "岭南大学人工智能与商业分析理学硕士、融合科技理学硕士",
-      "已获岭南大学人工智能研究博士（DAIS）录取",
+      "岭南大学人工智能研究博士（DAIS）在读",
       "聚焦智能合约安全、LLM Agent 与 RAG 系统"
     ],
     en: [
       "MSc in Artificial Intelligence and Business Analytics and MSc in Integrated Technology, Lingnan University",
-      "Admitted to Lingnan University's Doctor of Artificial Intelligence Studies (DAIS) programme",
+      "Doctor of Artificial Intelligence Studies (DAIS) student at Lingnan University",
       "Focused on smart contract security, LLM Agent workflows, and RAG systems"
     ],
     zhHant: [
       "嶺南大學人工智慧與商業分析理學碩士、融合科技理學碩士",
-      "已獲嶺南大學人工智能研究博士（DAIS）錄取",
+      "嶺南大學人工智能研究博士（DAIS）在讀",
       "聚焦智慧合約安全、LLM Agent 與 RAG 系統"
     ]
   } satisfies LocalizedList,
@@ -63,17 +63,17 @@ export const profile = {
   } satisfies LocalizedList,
   about: {
     zh: [
-      "岭南大学人工智能与商业分析理学硕士毕业，具备融合科技理学硕士背景，已获岭南大学人工智能研究博士（DAIS）录取。",
+      "岭南大学人工智能与商业分析理学硕士毕业，具备融合科技理学硕士背景，现于岭南大学攻读人工智能研究博士（DAIS）。",
       "研究方向集中于 AI 辅助智能合约安全分析、LLM Agent 工作流、区块链安全与 RAG 系统。",
       "具备 OpenClaw、LightRAG、内网 AI Agent、智能合约审计和 Web3 安全教育原型实践经验。"
     ],
     en: [
-      "YIN Nanzhu graduated from Lingnan University with an MSc in Artificial Intelligence and Business Analytics, has an MSc background in Integrated Technology, and has been admitted to Lingnan University's Doctor of Artificial Intelligence Studies (DAIS) programme.",
+      "YIN Nanzhu graduated from Lingnan University with an MSc in Artificial Intelligence and Business Analytics, has an MSc background in Integrated Technology, and is pursuing the Doctor of Artificial Intelligence Studies (DAIS) at Lingnan University.",
       "His research focuses on AI-assisted smart contract security analysis, LLM Agent workflows, blockchain security, and RAG systems.",
       "His practice covers OpenClaw, LightRAG, intranet AI Agent deployment, smart contract auditing, and Web3 security education prototypes."
     ],
     zhHant: [
-      "嶺南大學人工智慧與商業分析理學碩士畢業，具備融合科技理學碩士背景，已獲嶺南大學人工智能研究博士（DAIS）錄取。",
+      "嶺南大學人工智慧與商業分析理學碩士畢業，具備融合科技理學碩士背景，現於嶺南大學修讀人工智能研究博士（DAIS）。",
       "研究方向集中於 AI 輔助智慧合約安全分析、LLM Agent 工作流、區塊鏈安全與 RAG 系統。",
       "具備 OpenClaw、LightRAG、內網 AI Agent、智慧合約審計和 Web3 安全教育原型實踐經驗。"
     ]

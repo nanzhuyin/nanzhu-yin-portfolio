@@ -220,9 +220,9 @@ export const projects: Project[] = [
       zhHant: "電商評論可信知識發現與多智能體分析專案"
     },
     status: {
-      zh: "WI-IAT 2026 已录用（短论文），CCF C",
-      en: "Accepted at WI-IAT 2026 (Short Paper), CCF C",
-      zhHant: "WI-IAT 2026 已錄用（短論文），CCF C"
+      zh: "WI-IAT 2026 已录用，CCF C",
+      en: "Accepted at WI-IAT 2026, CCF C",
+      zhHant: "WI-IAT 2026 已錄用，CCF C"
     },
     paper: "Evidence-Grounded Review Intelligence for Inspectable E-Commerce Knowledge Discovery",
     stack: ["Python", "BERT", "BERTopic", "TF-IDF", "Logistic Regression", "Random Forest", "n8n", "DeepSeek", "LLM Agent", "JSON"],
@@ -268,11 +268,11 @@ export const projects: Project[] = [
       zhHant: "eVTOL 飛行資料隱私保護與區塊鏈溯源專案"
     },
     status: {
-      zh: "在研，待投 ADMA 2026，CCF C",
-      en: "In progress, planned for ADMA 2026, CCF C",
-      zhHant: "在研，待投 ADMA 2026，CCF C"
+      zh: "ADMA 2026 已录用，CCF C",
+      en: "Accepted at ADMA 2026, CCF C",
+      zhHant: "ADMA 2026 已錄用，CCF C"
     },
-    paper: "Privacy-Preserving Tokenization and Blockchain-Based Traceability for Secure eVTOL Data Ecosystems",
+    paper: "eVTOken: A Privacy-Preserving and Traceable Data Infrastructure for Trustworthy Low-Altitude Economy Application",
     stack: ["Blockchain", "Tokenization", "NFT", "IPFS", "AES-GCM-256", "Solidity", "Foundry", "eVTOL Flight Data"],
     summary: {
       zh: "eVTOken 框架结合链下加密、IPFS 内容寻址与链上 NFT 生命周期操作，用于飞行数据确权、监管审计和数据共享。",

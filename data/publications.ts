@@ -37,17 +37,17 @@ export const publications: Publication[] = [
       zhHant: "Evidence-Grounded Review Intelligence for Inspectable E-Commerce Knowledge Discovery"
     },
     venue: "WI-IAT 2026 / CCF C",
-    status: { zh: "已录用（短论文）", en: "Accepted (Short Paper)", zhHant: "已錄用（短論文）" }
+    status: { zh: "已录用", en: "Accepted", zhHant: "已錄用" }
   },
   {
     id: "adma-2026",
     title: {
-      zh: "Privacy-Preserving Tokenization and Blockchain-Based Traceability for Secure eVTOL Data Ecosystems",
-      en: "Privacy-Preserving Tokenization and Blockchain-Based Traceability for Secure eVTOL Data Ecosystems",
-      zhHant: "Privacy-Preserving Tokenization and Blockchain-Based Traceability for Secure eVTOL Data Ecosystems"
+      zh: "eVTOken: A Privacy-Preserving and Traceable Data Infrastructure for Trustworthy Low-Altitude Economy Application",
+      en: "eVTOken: A Privacy-Preserving and Traceable Data Infrastructure for Trustworthy Low-Altitude Economy Application",
+      zhHant: "eVTOken: A Privacy-Preserving and Traceable Data Infrastructure for Trustworthy Low-Altitude Economy Application"
     },
     venue: "ADMA 2026 / CCF C",
-    status: { zh: "在研，待投", en: "In progress, planned submission", zhHant: "在研，待投" }
+    status: { zh: "已录用", en: "Accepted", zhHant: "已錄用" }
   },
   {
     id: "cross-chain-survey",
